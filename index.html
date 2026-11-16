@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<!-- debut -->
+<!-- Title mte3 l-page -->
+<title>StudentGig | Trouve ton job étudiant géolocalisé en Tunisie</title>
+<!-- Description l-SEO -->
+<meta name="description" content="Plateforme géolocalisée pour connecter les étudiants avec les commerces locaux en Tunisie. Trouve un job part-time près de chez toi.">
+<!-- Mots-clés (Keywords) -->
+<meta name="keywords" content="Job étudiant, Sousse, Tunisie, Recrutement urgent, Mazroub, Part-time">
+<!-- fin -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentGig - Le bon job, au bon moment</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                            dark: '#120b29',
+                        },
+                        urgent: {
+                            500: '#ef4444',
+                            600: '#dc2626'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'radar-spin': 'spin 4s linear infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0d081e;
+            color: #f3f4f6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(139, 92, 246, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+        }
+
+        .radar-sweep {
+            background: conic-gradient(from 0deg, transparent 0deg, transparent 270deg, rgba(139, 92, 246, 0.4) 360deg);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d081e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2e1d54;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7c3aed;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="sticky top-0 z-50 glass-card border-b border-white/10 bg-brand-dark/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo & Tagline -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                    <div class="relative w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-700 via-brand-500 to-pink-500 p-0.5 flex items-center justify-center shadow-lg shadow-brand-500/30">
+                        <div class="w-full h-full bg-brand-dark rounded-[14px] flex items-center justify-center relative overflow-hidden">
+                            <i class="fa-solid fa-graduation-cap text-brand-400 text-xl absolute -top-1 -left-1 opacity-40"></i>
+                            <i class="fa-solid fa-location-dot text-brand-300 text-lg"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-extrabold tracking-tight text-white flex items-center gap-1">
+                            Student<span class="text-brand-400">Gig</span>
+                        </span>
+                        <span class="block text-[10px] text-brand-300/80 tracking-widest font-medium uppercase -mt-1">
+                            Le bon job, au bon moment
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#radar" class="text-sm font-medium text-gray-300 hover:text-white transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-[#8b5cf6] fa-compass text-brand-400"></i> Radar Jobs GPS
+                    </a>
+                    <a href="#jobs" class="text-sm font-medium text-gray-300 hover:text-white transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-briefcase text-brand-400"></i> Offers
+                    </a>
+                    <a href="#pricing" class="text-sm font-medium text-gray-300 hover:text-white transition-colors flex items-center gap-2">
+                        <i class="fa-solid fa-coins text-amber-400"></i> Tarifs Recruteurs
+                    </a>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex items-center space-x-3">
+                    <button onclick="openEmployerModal()" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-bold rounded-xl group bg-gradient-to-br from-brand-500 to-pink-500 group-hover:from-brand-500 group-hover:to-pink-500 hover:text-white text-white shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 transition-all duration-300">
+                        <span class="relative px-4 py-2.5 transition-all ease-in duration-75 bg-brand-dark/90 rounded-[10px] group-hover:bg-opacity-0 flex items-center gap-2">
+                            <i class="fa-solid fa-plus-circle text-brand-400 group-hover:text-white"></i>
+                            <span>Publier une Offre</span>
+                            <span class="bg-amber-500/20 text-amber-300 text-[10px] px-2 py-0.5 rounded-full border border-amber-500/30">Payant</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative pt-12 pb-20 overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-600/20 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Column text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-xs font-semibold backdrop-blur-sm">
+                        <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span>Plateforme #1 en Tunisie pour Jobs Étudiants</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none text-white">
+                        Trouvez un job <br>
+                        <span class="gradient-text">près de chez vous</span> en quelques clics.
+                    </h1>
+                    <p class="text-lg text-gray-300/90 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Que vous soyez étudiant cherchant une mission flexible ou un recruteur pressé (<span class="text-amber-400 font-semibold">"Mazroub"</span>), StudentGig connecte instantanément l'offre et la demande grâce au radar GPS.
+                    </p>
+
+                    <!-- Search Quick Bar -->
+                    <div class="p-2 glass-card rounded-2xl shadow-2xl flex flex-col sm:flex-row gap-2 max-w-xl mx-auto lg:mx-0">
+                        <div class="flex-1 flex items-center px-3 bg-white/5 rounded-xl border border-white/5">
+                            <i class="fa-solid fa-magnifying-glass text-brand-400 mr-2"></i>
+                            <input type="text" id="searchInput" placeholder="Ex: Serveur, Barista, Tutorat..." class="w-full bg-transparent border-none py-3 text-sm text-white focus:outline-none placeholder-gray-400">
+                        </div>
+                        <div class="flex items-center px-3 bg-white/5 rounded-xl border border-white/5 min-w-[140px]">
+                            <i class="fa-solid fa-location-crosshairs text-brand-400 mr-2"></i>
+                            <select id="locationFilter" class="bg-transparent border-none py-3 text-sm text-white focus:outline-none w-full cursor-pointer">
+                                <option value="all" class="bg-brand-dark text-white">Toutes zones</option>
+                                <option value="Sahloul" class="bg-brand-dark text-white">Ariana</option>
+                                <option value="Hammam Sousse" class="bg-brand-dark text-white">Tunis (Centre)</option>
+                                <option value="el riyadh" class="bg-brand-dark text-white">Les Berges du Lac</option>
+                                <option value="Sousse" class="bg-brand-dark text-white">Sousse</option>
+                            </select>
+                        </div>
+                        <button onclick="filterJobs()" class="bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-bold px-6 py-3 rounded-xl transition shadow-lg shadow-brand-500/30 flex items-center justify-center gap-2">
+                            <span>Filtrer</span>
+                        </button>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="pt-4 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 border-t border-white/10">
+                        <div>
+                            <p class="text-2xl font-black text-white">100%</p>
+                            <p class="text-xs text-gray-400">Vérifié & Géolocalisé</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-black text-amber-400">&lt; 2h</p>
+                            <p class="text-xs text-gray-400">Option Mazroub ⚡</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-black text-brand-400">500+</p>
+                            <p class="text-xs text-gray-400">Missions/Mois</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column Interactive Radar Visual -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full glass-card p-4 border border-brand-500/30 shadow-2xl flex items-center justify-center overflow-hidden">
+                        <!-- Radar Circles -->
+                        <div class="absolute inset-4 rounded-full border border-brand-500/20"></div>
+                        <div class="absolute inset-16 rounded-full border border-brand-500/20"></div>
+                        <div class="absolute inset-28 rounded-full border border-brand-500/20"></div>
+                        
+                        <!-- Radar Sweeping effect -->
+                        <div class="absolute inset-0 rounded-full radar-sweep animate-radar-spin origin-center pointer-events-none"></div>
+
+                        <!-- Center Pin -->
+                        <div class="relative z-10 w-14 h-14 bg-gradient-to-tr from-brand-600 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg shadow-brand-500/50 animate-float">
+                            <i class="fa-solid fa-graduation-cap text-2xl text-white"></i>
+                        </div>
+
+                        <!-- Floating Pins -->
+                        <div class="absolute top-16 left-20 z-20 bg-emerald-500/20 backdrop-blur-md border border-emerald-500/40 text-emerald-300 text-xs px-2.5 py-1 rounded-full flex items-center gap-1 shadow-lg animate-pulse">
+                            <i class="fa-solid fa-bolt text-amber-400"></i> Café Lac 2 (25 DT/h)
+                        </div>
+
+                        <div class="absolute bottom-20 right-12 z-20 bg-brand-500/20 backdrop-blur-md border border-brand-500/40 text-brand-200 text-xs px-2.5 py-1 rounded-full flex items-center gap-1 shadow-lg">
+                            <i class="fa-solid fa-location-dot text-brand-400"></i> Tutorat Math (Ariana)
+                        </div>
+
+                        <div class="absolute top-1/2 right-8 z-20 bg-red-500/20 backdrop-blur-md border border-red-500/40 text-red-300 text-xs px-2 py-1 rounded-full flex items-center gap-1 shadow-lg animate-bounce">
+                            <span class="w-2 h-2 rounded-full bg-red-500"></span> Mazroub 🔥
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- RECRUITER MONETIZATION & PRICING SECTION -->
+    <section id="pricing" class="py-16 bg-brand-dark/50 border-y border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-semibold mb-3">
+                    <i class="fa-solid fa-store"></i> Espace Employeurs & Recruteurs
+                </div>
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                    Tarifs de Publication d'Offres
+                </h2>
+                <p class="text-gray-400 mt-2">
+                    Pour garantir des offres réelles et de qualité aux étudiants, la publication est payante pour les employeurs. Choisissez la formule adaptée à vos urgences.
+                </p>
+            </div>
+
+            <!-- Pricing Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                <!-- Standard Plan -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border border-white/10 hover:border-brand-500/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-white">Standard</h3>
+                            <span class="px-2.5 py-1 bg-white/5 text-gray-300 text-xs font-medium rounded-full">Classic</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-6">Pour les recrutements prévus à l'avance sans urgence particulière.</p>
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-4xl font-extrabold text-white">15</span>
+                            <span class="text-xl font-bold text-brand-400 ml-1">DT</span>
+                            <span class="text-gray-400 text-xs ml-2">/ annonce (7 jours)</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Publication sur la carte GPS</li>
+                            <li class="flex items-center gap-2"><li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Réception illimitée de CVs</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Notification aux étudiants proches</li>
+                        </ul>
+                    </div>
+                    <button onclick="openEmployerModal('standard')" class="w-full py-3 px-4 rounded-xl font-bold bg-white/10 hover:bg-white/20 text-white transition border border-white/10">
+                        Choisir Standard
+                    </button>
+                </div>
+
+                <!-- Mazroub Urgent Plan (Highlighted) -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border-2 border-red-500/60 relative bg-gradient-to-b from-red-950/20 to-brand-dark/80 shadow-2xl shadow-red-500/10">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-red-600 to-amber-500 text-white text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg flex items-center gap-1.5">
+                        <i class="fa-solid fa-bolt"></i> Recommandé - Recrutement Express
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4 mt-2">
+                            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                                Mazroub ⚡
+                            </h3>
+                            <span class="px-2.5 py-1 bg-red-500/20 text-red-300 text-xs font-semibold rounded-full border border-red-500/30">Urgent</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-6">Un imprévu ? Un serveur absent ? Trouvez un étudiant qualifié dans la journée.</p>
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-4xl font-extrabold text-white">35</span>
+                            <span class="text-xl font-bold text-red-400 ml-1">DT</span>
+                            <span class="text-gray-400 text-xs ml-2">/ annonce (3 jours)</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-200 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-red-400"></i> <strong>Badge Rouge "MAZROUB" 🔥</strong></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-red-400"></i> Push Notification WhatsApp/SMS</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-red-400"></i> Affichage prioritaire en tête de liste</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-red-400"></i> Radar GPS clignotant</li>
+                        </ul>
+                    </div>
+                    <button onclick="openEmployerModal('urgent')" class="w-full py-3 px-4 rounded-xl font-extrabold bg-gradient-to-r from-red-600 to-amber-500 hover:from-red-500 hover:to-amber-400 text-white shadow-lg shadow-red-500/30 transition">
+                        Publier en Urgent (35 DT)
+                    </button>
+                </div>
+
+                <!-- Premium Sponsor Plan -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between border border-brand-500/30 hover:border-brand-500/60 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-white">Sponsor VIP</h3>
+                            <span class="px-2.5 py-1 bg-brand-500/20 text-brand-300 text-xs font-semibold rounded-full border border-brand-500/30">Entreprises</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-6">Pour les grandes enseignes cherchant un volume élevé d'étudiants.</p>
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-4xl font-extrabold text-white">60</span>
+                            <span class="text-xl font-bold text-brand-400 ml-1">DT</span>
+                            <span class="text-gray-400 text-xs ml-2">/ annonce (15 jours)</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Sponsorisé en Top du Feed</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Logo entreprise mis en valeur</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-400"></i> Support dédié StudentGig</li>
+                        </ul>
+                    </div>
+                    <button onclick="openEmployerModal('sponsor')" class="w-full py-3 px-4 rounded-xl font-bold bg-brand-600 hover:bg-brand-500 text-white transition shadow-lg shadow-brand-500/20">
+                        Choisir VIP
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE JOB FEED SECTION -->
+    <main id="jobs" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+            <div>
+                <h2 class="text-2xl font-extrabold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-fire text-amber-400"></i> Missions Disponibles en Ce Moment
+                </h2>
+                <p class="text-sm text-gray-400">Postulez directement auprès des recruteurs en 1 clic</p>
+            </div>
+            
+            <!-- Quick Filter Tabs -->
+            <div class="flex flex-wrap gap-2">
+                <button onclick="filterByTag('all')" class="job-tag-btn px-4 py-2 rounded-xl text-xs font-semibold bg-brand-500 text-white shadow-md">
+                    Toutes
+                </button>
+                <button onclick="filterByTag('urgent')" class="job-tag-btn px-4 py-2 rounded-xl text-xs font-semibold glass-card text-red-400 hover:bg-red-500/10 border border-red-500/20">
+                    ⚡ Urgent / Mazroub
+                </button>
+                <button onclick="filterByTag('Restauration')" class="job-tag-btn px-4 py-2 rounded-xl text-xs font-semibold glass-card text-gray-300 hover:bg-white/10">
+                    Café & Resto
+                </button>
+                <button onclick="filterByTag('Enseignement')" class="job-tag-btn px-4 py-2 rounded-xl text-xs font-semibold glass-card text-gray-300 hover:bg-white/10">
+                    Cours & Tutorat
+                </button>
+            </div>
+        </div>
+
+        <!-- Job Cards Grid -->
+        <div id="jobGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Dynamic jobs will render here via JS -->
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="glass-card border-t border-white/10 mt-20 bg-brand-dark/90">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-xl bg-brand-500 flex items-center justify-center text-white font-bold">SG</div>
+                        <span class="text-xl font-bold text-white">StudentGig</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Le bon job, au bon moment. La 1ère plateforme tunisienne de mise en relation directe géolocalisée.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-3">Pour les Étudiants</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><a href="#jobs" class="hover:text-brand-300">Trouver une mission</a></li>
+                        <li><a href="#" class="hover:text-brand-300">Créer un CV rapide</a></li>
+                        <li><a href="#" class="hover:text-brand-300">Conseils d'entretien</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-3">Pour les Employeurs</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><a href="#pricing" class="hover:text-brand-300">Grille tarifaire</a></li>
+                        <li><a href="javascript:void(0)" onclick="openEmployerModal('urgent')" class="hover:text-brand-300 text-red-400 font-semibold">Publier une annonce Mazroub ⚡</a></li>
+                        <li><a href="#" class="hover:text-brand-300">Guide de recrutement</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-white mb-3">Contact & Secours</h4>
+                    <p class="text-xs text-gray-400 mb-2"><i class="fa-solid fa-envelope mr-1"></i> contact@studentgig.tn</p>
+                    <p class="text-xs text-gray-400"><i class="fa-solid fa-phone mr-1"></i> +216 71 000 000</p>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-6 text-center text-xs text-gray-500">
+                &copy; 2026 StudentGig. Tous droits réservés. Designed with <i class="fa-solid fa-heart text-purple-400"></i> for Tunisian students.
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL 1: RECRUITER JOB POSTING & PAYMENT ESTIMATOR -->
+    <div id="employerModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="glass-card max-w-2xl w-full rounded-3xl p-6 sm:p-8 border border-brand-500/30 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeEmployerModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white transition text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 px-3 py-1 rounded-full border border-amber-500/20">
+                    Espace Recruteur Payant
+                </span>
+                <h3 class="text-2xl font-black text-white mt-2">Publier une Offre de Mission</h3>
+                <p class="text-xs text-gray-400">Remplissez le formulaire ci-dessous et choisissez votre formule.</p>
+            </div>
+
+            <form id="postJobForm" onsubmit="handleJobSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Titre de l'Annonce *</label>
+                    <input type="text" required id="postTitle" placeholder="Ex: Serveur(se) weekend, Barista expérimenté..." class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:border-brand-500 focus:outline-none">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1">Nom de l'Etablissement *</label>
+                        <input type="text" required id="postCompany" placeholder="Ex: Café Plug & Play" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:border-brand-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1">Zone / Ville *</label>
+                        <select id="postLocation" required class="w-full bg-brand-dark border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:border-brand-500 focus:outline-none">
+                            <option value="Ariana">Ariana</option>
+                            <option value="Tunis">Tunis (Centre)</option>
+                            <option value="Lac 2">Les Berges du Lac</option>
+                            <option value="Sousse">Sousse</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1">Rémunération Proposée *</label>
+                        <input type="text" required id="postPay" placeholder="Ex: 25 DT / Heure ou 60 DT / Jour" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:border-brand-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 mb-1">Catégorie *</label>
+                        <select id="postCategory" required class="w-full bg-brand-dark border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:border-brand-500 focus:outline-none">
+                            <option value="Restauration">Restauration & Café</option>
+                            <option value="Enseignement">Enseignement & Soutien</option>
+                            <option value="Vente">Vente & Commerce</option>
+                            <option value="Evénementiel">Evénementiel & Accueil</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Select Plan Option -->
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-2">Choisissez la Formule d'Affichage *</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <label class="cursor-pointer border border-white/10 bg-white/5 p-3 rounded-xl flex flex-col items-center hover:border-brand-500 transition text-center">
+                            <input type="radio" name="planType" value="standard" onchange="updatePriceEstimate()" class="mb-1 accent-brand-500">
+                            <span class="text-xs font-bold text-white">Standard</span>
+                            <span class="text-[10px] text-gray-400">15 DT</span>
+                        </label>
+                        <label class="cursor-pointer border border-red-500/50 bg-red-500/10 p-3 rounded-xl flex flex-col items-center hover:border-red-500 transition text-center">
+                            <input type="radio" name="planType" value="urgent" checked onchange="updatePriceEstimate()" class="mb-1 accent-red-500">
+                            <span class="text-xs font-bold text-red-300 flex items-center gap-1">Mazroub ⚡</span>
+                            <span class="text-[10px] text-red-400">35 DT</span>
+                        </label>
+                        <label class="cursor-pointer border border-brand-500/50 bg-brand-500/10 p-3 rounded-xl flex flex-col items-center hover:border-brand-500 transition text-center">
+                            <input type="radio" name="planType" value="sponsor" onchange="updatePriceEstimate()" class="mb-1 accent-brand-500">
+                            <span class="text-xs font-bold text-brand-300">VIP Sponsor</span>
+                            <span class="text-[10px] text-brand-400">60 DT</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-brand-dark/80 rounded-2xl border border-white/10 flex items-center justify-between">
+                    <div>
+                        <span class="block text-xs text-gray-400">Montant Total à Régler</span>
+                        <span id="finalPriceDisplay" class="text-2xl font-black text-amber-400">35 DT</span>
+                    </div>
+                    <button type="submit" class="py-3 px-6 rounded-xl font-bold bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white shadow-lg transition flex items-center gap-2">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <span>Payer & Publier</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 2: STUDENT APPLICATION MODAL -->
+    <div id="applyModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div class="glass-card max-w-lg w-full rounded-3xl p-6 sm:p-8 border border-brand-500/30 shadow-2xl relative">
+            <button onclick="closeApplyModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white transition text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="mb-6">
+                <span class="text-xs font-bold text-brand-400 uppercase tracking-wider">Candidature Rapide</span>
+                <h3 id="modalJobTitle" class="text-xl font-extrabold text-white mt-1">Serveur Weekend</h3>
+                <p id="modalCompany" class="text-xs text-gray-400">Café Plug & Play - Ariana</p>
+            </div>
+
+            <form onsubmit="handleApplySubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Nom & Prénom *</label>
+                    <input type="text" required placeholder="Votre nom complet" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:border-brand-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Numéro Téléphone (WhatsApp) *</label>
+                    <input type="tel" required placeholder="+216 20 000 000" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:border-brand-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Université / Spécialité</label>
+                    <input type="text" placeholder="Ex: INSAT, FST, IHEC..." class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:border-brand-500 focus:outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">Message rapide au recruteur</label>
+                    <textarea rows="3" placeholder="Ex: Disponible immédiatement ce weekend, expérience de 6 mois..." class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:border-brand-500 focus:outline-none"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-3 rounded-xl font-bold bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white shadow-lg shadow-brand-500/30 transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Envoyer ma Candidature</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="glass-card bg-emerald-500/20 border border-emerald-500/40 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3">
+            <i class="fa-solid fa-circle-check text-emerald-400 text-xl"></i>
+            <div>
+                <h5 id="toastTitle" class="font-bold text-sm">Action réussie</h5>
+                <p id="toastMessage" class="text-xs text-gray-300">Votre demande a bien été prise en compte.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Sample Jobs Data
+        const initialJobs = [
+            {
+                id: 1,
+                title: "Serveur Express (Soirée)",
+                company: "Café Plug & Play",
+                location: "Ariana",
+                pay: "30 DT / Soirée",
+                category: "Restauration",
+                type: "urgent",
+                timeAgo: "Il y a 15 min",
+                desc: "Besoin urgent d'un serveur souriant pour la soirée du samedi de 18h à 00h."
+            },
+            {
+                id: 2,
+                title: "Tuteur Mathématiques (Bac)",
+                company: "Particulier",
+                location: "Tunis",
+                pay: "25 DT / Heure",
+                category: "Enseignement",
+                type: "sponsor",
+                timeAgo: "Il y a 1h",
+                desc: "Recherche étudiant en école d'ingénieur pour cours de soutien 2 fois par semaine."
+            },
+            {
+                id: 3,
+                title: "Vendeuse / Vendeur Boutique",
+                company: "Fashion Store",
+                location: "Lac 2",
+                pay: "400 DT / Mois (Part-time)",
+                category: "Vente",
+                type: "standard",
+                timeAgo: "Il y a 3h",
+                desc: "Poste à temps partiel idéal pour étudiant(e)s l'après-midi."
+            },
+            {
+                id: 4,
+                title: "Hôte d'Accueil Evénement",
+                company: "Agency Event",
+                location: "Sousse",
+                pay: "50 DT / Jour",
+                category: "Evénementiel",
+                type: "urgent",
+                timeAgo: "Il y a 45 min",
+                desc: "Recrutement urgent de 4 étudiants pour accueil séminaire hôtel ce jeudi."
+            }
+        ];
+
+        let currentJobs = [...initialJobs];
+
+        // Render Jobs
+        function renderJobs(jobsToRender) {
+            const container = document.getElementById('jobGrid');
+            container.innerHTML = '';
+
+            if(jobsToRender.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-12 glass-card rounded-3xl">
+                        <i class="fa-solid fa-ghost text-4xl text-brand-400 mb-3"></i>
+                        <p class="text-gray-400 text-sm">Aucune mission ne correspond à vos critères.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            jobsToRender.forEach(job => {
+                const isUrgent = job.type === 'urgent';
+                const isSponsor = job.type === 'sponsor';
+
+                const cardHtml = `
+                    <div class="glass-card glass-card-hover rounded-3xl p-6 relative flex flex-col justify-between ${isUrgent ? 'border-red-500/40 bg-gradient-to-b from-red-950/10 to-transparent' : ''}">
+                        ${isUrgent ? `
+                            <div class="absolute -top-3 right-6 bg-red-600 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider flex items-center gap-1 shadow-md animate-pulse">
+                                <i class="fa-solid fa-bolt"></i> Mazroub ⚡
+                            </div>
+                        ` : ''}
+
+                        ${isSponsor ? `
+                            <div class="absolute -top-3 right-6 bg-brand-600 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider flex items-center gap-1 shadow-md">
+                                <i class="fa-solid fa-star"></i> VIP Sponsor
+                            </div>
+                        ` : ''}
+
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="text-xs text-gray-400"><i class="fa-solid fa-clock text-brand-400 mr-1"></i>${job.timeAgo}</span>
+                                <span class="text-xs px-2 py-0.5 rounded-md bg-white/5 text-brand-300 border border-white/5">${job.category}</span>
+                            </div>
+
+                            <h3 class="text-lg font-bold text-white mb-1 hover:text-brand-300 transition cursor-pointer">${job.title}</h3>
+                            <p class="text-xs text-gray-400 mb-4"><i class="fa-solid fa-building mr-1"></i>${job.company} &bull; <i class="fa-solid fa-location-dot ml-1 text-red-400"></i> ${job.location}</p>
+
+                            <p class="text-xs text-gray-300/80 mb-6 leading-relaxed line-clamp-2">${job.desc}</p>
+                        </div>
+
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                            <div>
+                                <span class="block text-[10px] text-gray-400 uppercase tracking-wider">Rémunération</span>
+                                <span class="text-sm font-extrabold text-emerald-400">${job.pay}</span>
+                            </div>
+                            <button onclick="openApplyModal('${job.title}', '${job.company}')" class="px-4 py-2 rounded-xl text-xs font-bold ${isUrgent ? 'bg-red-600 hover:bg-red-500 text-white' : 'bg-brand-600 hover:bg-brand-500 text-white'} transition shadow-md">
+                                Postuler
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHtml;
+            });
+        }
+
+        // Filter Jobs Function
+        function filterJobs() {
+            const searchVal = document.getElementById('searchInput').value.toLowerCase();
+            const locationVal = document.getElementById('locationFilter').value;
+
+            const filtered = currentJobs.filter(job => {
+                const matchesSearch = job.title.toLowerCase().includes(searchVal) || job.desc.toLowerCase().includes(searchVal) || job.company.toLowerCase().includes(searchVal);
+                const matchesLocation = locationVal === 'all' || job.location === locationVal;
+                return matchesSearch && matchesLocation;
+            });
+
+            renderJobs(filtered);
+        }
+
+        function filterByTag(tag) {
+            if(tag === 'all') {
+                renderJobs(currentJobs);
+            } else if(tag === 'urgent') {
+                renderJobs(currentJobs.filter(j => j.type === 'urgent'));
+            } else {
+                renderJobs(currentJobs.filter(j => j.category === tag));
+            }
+        }
+
+        // Modals Controls
+        function openEmployerModal(plan = 'urgent') {
+            document.getElementById('employerModal').classList.remove('hidden');
+            const radios = document.getElementsByName('planType');
+            radios.forEach(r => {
+                if(r.value === plan) r.checked = true;
+            });
+            updatePriceEstimate();
+        }
+
+        function closeEmployerModal() {
+            document.getElementById('employerModal').classList.add('hidden');
+        }
+
+        function updatePriceEstimate() {
+            const selectedPlan = document.querySelector('input[name="planType"]:checked').value;
+            const priceDisplay = document.getElementById('finalPriceDisplay');
+            if(selectedPlan === 'standard') priceDisplay.innerText = '15 DT';
+            if(selectedPlan === 'urgent') priceDisplay.innerText = '35 DT';
+            if(selectedPlan === 'sponsor') priceDisplay.innerText = '60 DT';
+        }
+
+        function handleJobSubmit(e) {
+            e.preventDefault();
+            const title = document.getElementById('postTitle').value;
+            const company = document.getElementById('postCompany').value;
+            const location = document.getElementById('postLocation').value;
+            const pay = document.getElementById('postPay').value;
+            const category = document.getElementById('postCategory').value;
+            const plan = document.querySelector('input[name="planType"]:checked').value;
+
+            const newJob = {
+                id: Date.now(),
+                title: title,
+                company: company,
+                location: location,
+                pay: pay,
+                category: category,
+                type: plan,
+                timeAgo: "À l'instant",
+                desc: "Annonce fraîchement publiée par l'employeur."
+            };
+
+            currentJobs.unshift(newJob);
+            renderJobs(currentJobs);
+            closeEmployerModal();
+            showToast("Annonce Publiée !", "Votre offre a été enregistrée avec succès après validation du paiement.");
+        }
+
+        function openApplyModal(title, company) {
+            document.getElementById('modalJobTitle').innerText = title;
+            document.getElementById('modalCompany').innerText = company;
+            document.getElementById('applyModal').classList.remove('hidden');
+        }
+
+        function closeApplyModal() {
+            document.getElementById('applyModal').classList.add('hidden');
+        }
+
+        function handleApplySubmit(e) {
+            e.preventDefault();
+            closeApplyModal();
+            showToast("Candidature Envoyée !", "Le recruteur a été notifié par SMS / WhatsApp.");
+        }
+
+        function showToast(title, message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastTitle').innerText = title;
+            document.getElementById('toastMessage').innerText = message;
+            toast.classList.remove('translate-y-32', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-32', 'opacity-0');
+            }, 4000);
+        }
+
+        // Initialize Page
+        window.onload = function() {
+            renderJobs(currentJobs);
+        }
+    </script>
+</body>
+</html>
